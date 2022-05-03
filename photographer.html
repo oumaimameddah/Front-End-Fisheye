@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fisheye - photographe </title>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+              integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    </head>
+
+    <body>
+
+        <header role="banner" class="header">
+            <a href="./index.html" class="header-link"><img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"/></a>
+        </header>
+
+        <!-- Main Section -->
+        <main id="main">
+            <header id="photographer-profile" aria-label="photographer information">
+                <section id="photographer-header"></section>
+            </header>
+
+            <!-- Tri -->
+            <div class="works-sort">
+                <span id="sort-text">Trier par</span>
+                <div id="sort-wrapper">
+                    <button class="sort-btn" aria-haspopup="listbox">Popularité</button>
+                    <span class="fas fa-chevron-down arrow-down-open" role='button'></span>
+                    <ul class="hidden-sort" role="listbox">
+                        <li class="sort" role='option'>Popularité <span class="fas fa-chevron-up arrow-up-close"></span>
+                        </li>
+                        <li class="sort" role='option'>Date</li>
+                        <li class="sort" role='option'>Tître</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Traveaux de Photographer -->
+            <section id='photographer-works' aria-label='photographer works'></section>
+
+        </main>
+
+        <!-- Modal -->
+        <div role="dialog" id="form-dialog" aria-label="contact me form" aria-labelledby="form-title"
+             aria-hidden="true">
+            <form method="POST" id="contact-form">
+                <header aria-label="contact form header">
+                    <h1 id="form-title">
+                        <span>Contactez-moi</span>
+                        <span id="ph-form-name"></span>
+                    </h1>
+                    <button id="close-btn" title="Close form" type="button">
+                        <span class="fas fa-times close-form-icon" aria-hidden="true"></span>
+                    </button>
+                </header>
+                <!-- FIRST NAME -->
+                <div class="formData" data-error="Vous devez entrer votre prénom." data-error-visible="false">
+                    <label for="first-name" id="label-firstname">Prénom</label>
+                    <input name="first-name" id="first-name" aria-labelledby="label-firstname" placeholder="Prénom">
+                </div>
+                <!-- LAST NAME -->
+                <div class="formData" data-error="Vous devez entrer votre nom." data-error-visible="false">
+                    <label for="last-name" id="label-lastname">Nom</label>
+                    <input name="last-name" id="last-name" aria-labelledby="label-lastname" placeholder="Nom">
+                </div>
+                <!-- EMAIL -->
+                <div class="formData" data-error="Vous devez entrer un email valide." data-error-visible="false">
+                    <label for="email" id="label-email">Email</label>
+                    <input type="email" name="email" id="email" aria-labelledby="label-email"
+                           placeholder="exemple@email.com">
+                </div>
+                <!-- MESSAGE -->
+                <div class="formData" data-error="Vous devez entrer votre message." data-error-visible="false">
+                    <label for="message" id="label-message">Votre message</label>
+                    <textarea name="message" id="message" cols="20" rows="5" aria-labelledby="label-message"
+                              placeholder="Votre message..."></textarea>
+                </div>
+                <!-- SUBMIT -->
+                <input type="submit" value="Envoyer" class="form-submit" title="Send">
+            </form>
+        </div>
+
+
+        <script src="/scripts/factories/photographer.js"></script>
+        <script src="/scripts/factories/contact.js"></script>
+        <script src="/scripts/factories/media.js"></script>
+        <script src="/scripts/utils/backend.js"></script>
+        <script src="/scripts/pages/photographer.js"></script>
+    </body>
+</html>

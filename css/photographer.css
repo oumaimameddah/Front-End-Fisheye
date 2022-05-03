@@ -1,0 +1,366 @@
+.photograph-header {
+    background-color: #FAFAFA;
+    height: 300px;
+    margin: 0 100px;
+}
+
+.article-photographer {
+    margin: .5rem;
+    padding: .3rem;
+    text-align: center;
+    width: 22rem;
+}
+
+.name {
+    color: #D3573C;
+    font-size: 1.7rem;
+    margin-bottom: .7rem;
+}
+
+.photographer-portrait {
+    background-color: #59ce26;
+    border-radius: 50%;
+    box-shadow: 0 0 .8rem rgba(134, 134, 134, 0.432);
+    height: 12.5rem;
+    margin: 0 auto;
+    object-fit: cover;
+    overflow: hidden;
+    width: 12.5rem;
+}
+
+.location {
+    color: #901C1C;
+    margin: .2rem;
+}
+
+.tagline {
+    margin: 0;
+}
+
+.price {
+    color: #757575;
+    margin: 0;
+}
+
+.article-photographer a {
+    text-decoration: none;
+}
+
+.photographer-profile {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.photographer-infos { }
+
+.photographer-city {
+    color: #901c1c;
+    font-size: .9em;
+    margin: 0;
+}
+
+.photographer-tagline {
+    color: #525252;
+    font-size: .9em;
+    margin: 0;
+}
+
+.photographer-profile button {
+    background: #901c1c;
+    border: none;
+    border-radius: 5px;
+    bottom: 28px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    height: 35px;
+    position: fixed;
+    width: 170px;
+}
+
+.photographer-profile button:hover {
+    background: #651414;
+    transform: scale(1.05);
+}
+
+.photographer-profile img {
+    border-radius: 50%;
+    height: 100px;
+    object-fit: cover;
+    width: 100px;
+}
+
+.photographer-infos h2 {
+    color: #D3573C;
+    font-size: 2.4em;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+.works-sort {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .arrow-down-open {
+        color: #fff;
+        left: 18.5rem;
+        position: absolute;
+        top: 31.4rem;
+    }
+
+    .arrow-up-close {
+        color: #fff;
+        left: 8.5rem;
+        position: absolute;
+        top: 1.55rem;
+    }
+
+    .hidden-sort li {
+        background: #901c1c;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 1.25rem;
+    }
+
+    .sort-btn {
+        align-items: center;
+        background: #901c1c;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        display: flex;
+        font-size: 1rem;
+        font-weight: 500;
+        justify-content: flex-start;
+        left: 11rem;
+        padding: .625rem 1.25rem;
+        position: absolute;
+        top: 30.6rem;
+        width: 10rem;
+    }
+
+    .works-sort {
+        display: block;
+        margin-left: 2rem;
+        margin-top: 2rem;
+    }
+
+    .works-sort>span {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-right: 1.5625rem;
+    }
+
+    ul.hidden-sort {
+        border-radius: 5px;
+        color: #fff;
+        display: none;
+        left: 167px;
+        padding: 0;
+        position: absolute;
+        top: 385px;
+        width: 11rem;
+        z-index: 10;
+    }
+
+    ul.hidden-sort li:hover {
+        background-color: #651414;
+        cursor: pointer;
+    }
+
+    ul.hidden-sort li:nth-child(1) {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+#photographer-works {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 2.8125rem 0;
+    padding: 0 1.25rem;
+}
+
+.btn-like {
+    background: none;
+    border: none;
+    color: #901c1c;
+    font-size: 1.1rem;
+    margin-left: -.3rem;
+}
+
+.ph-work-elt {
+    color: #901c1c;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin: 0 0 .625rem;
+    width: 20.9375rem;
+}
+
+.ph-work-elt .fa-heart:hover,
+.ph-work-elt img:hover,
+.ph-work-elt video:hover {
+    cursor: pointer;
+}
+
+.ph-work-elt .ph-work-title {
+    width: 14.0625rem;
+}
+
+.ph-work-elt img,
+.ph-work-elt video {
+    border-radius: .3125rem;
+    height: 11.875rem;
+    object-fit: cover;
+    width: 20.9375rem;
+}
+
+.ph-work-elt-text {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+.ph-work-title {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal {
+    border-radius: 5px;
+    background-color: #DB8876;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+}
+
+.modal header {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal header img {
+    cursor: pointer;
+}
+
+.modal header h2 {
+    font-size: 64px;
+    font-weight: normal;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label {
+    color: #312E2E;
+    font-size: 36px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+    margin-bottom: 26px;
+}
+
+form input {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+}
+
+@media (min-width: 900px) {
+    header {
+        margin-left: 2rem;
+    }
+
+    .photographer-profile {
+        background: #fafafa;
+        padding: 2rem;
+    }
+
+    .photographer-profile img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .photographer-infos h2 {
+        font-size: 50px;
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+
+    .photographer-city {
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+
+    .photographer-tagline {
+        font-size: 15px;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .photographer-profile {
+        background-color: #FAFAFA;
+        margin: 0 20px;
+    }
+
+    .photographer-profile button {
+        height: 55px;
+        left: 42rem;
+        position: absolute;
+        top: 19.8rem;
+    }
+}
+
+@media (min-width: 1300px) {
+    #photographer-works {
+        justify-content: space-between;
+        margin: 2.8125rem 6.25rem;
+        padding: 0;
+    }
+
+    .ph-work-elt {
+        width: 21.875rem;
+    }
+
+    .ph-work-elt img,
+    .ph-work-elt video {
+        height: 18.75rem;
+        width: 21.875rem;
+    }
+}
