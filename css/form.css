@@ -85,6 +85,10 @@ form header {
     margin: -.3rem .3rem 1.25rem 0;
 }
 
+.header-contact {
+    width: 100%;
+}
+
 form input,
 form textarea {
     border: none;

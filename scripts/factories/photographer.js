@@ -72,5 +72,15 @@ function photographerFactory(data) {
         return templatePhotographerProfil;
     }
 
-    return { name, picture, getUserCardDOM, getPhotographerProfileHeader }
+    async function likesAndPrices(totalLike) {
+        let box = document.getElementById('box');
+        let boxTemplate = `
+                    <span id="total-likes">${totalLike}</span>
+                    <i class="fas fa-heart" aria-label='likes'></i>
+                    <span>${price} €/ jour</span>
+                `;
+        box.innerHTML = boxTemplate;
+    }
+
+    return { name, picture, getUserCardDOM, getPhotographerProfileHeader, likesAndPrices }
 }

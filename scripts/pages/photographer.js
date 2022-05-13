@@ -3,6 +3,8 @@
  * */
 
 const elementGallery = document.getElementById('photographer-works');
+const mediasWork = [];
+var currentMediaIndex;
 
 /**
  * Fonction de la récupération et affichage des données d'un Photographer
@@ -31,15 +33,73 @@ async function displayPhotographerData(media, photographers, refresh) {
     }
 
     // Afficher la partie Gallery
-    await updateMediaGallery(mediaGallery);
+    await updateMediaGallery(mediaGallery, selectedPhotographerData);
 }
 
-async function updateMediaGallery(medias) {
+async function updateMediaGallery(medias, selectedPhotographerData) {
+    let likes = 0;
+    let index = 0;
+    while (mediasWork.length) { mediasWork.pop() }
     medias.forEach((media) => {
         if (resourcesExist('assets/sources/', media)) {
-            elementGallery.innerHTML += mediaFactory(media).createMediaHtml();
+            elementGallery.innerHTML += mediaFactory(media).createMediaHtml(index);
+            mediasWork.push({ html: mediaFactory(media).getWorkTemplate(), name: media.title });
+            likes += media.likes;
+            index += 1;
         }
     });
+
+    // Prices and total likes
+    await photographerFactory(selectedPhotographerData).likesAndPrices(likes);
+}
+
+function showWork(index) {
+    let lightBoxMedia = document.getElementById('works-lightbox-media');
+    let lightBoxName = document.getElementById('works-lightbox-name');
+    lightBoxMedia.innerHTML = `${mediasWork[index].html}`;
+    lightBoxName.innerHTML = `${mediasWork[index].name}`;
+    document.getElementById('works-lightbox').style.display = 'block';
+    currentMediaIndex = index;
+    close();
+    previous();
+    next();
+}
+
+function close() {
+    document.querySelector('.close-lightbox-icon').addEventListener('click', () => {
+        let lightbox = document.getElementById('works-lightbox');
+        lightbox.style.display = 'none';
+    })
+}
+
+function previous() {
+    document.querySelector('.left-arrow-lightbox').addEventListener('click', () => {
+        currentMediaIndex -= 1;
+        let lightBoxMedia = document.getElementById('works-lightbox-media');
+        let lightBoxName = document.getElementById('works-lightbox-name');
+
+        if (currentMediaIndex < 0) {
+            currentMediaIndex = mediasWork.length - 1;
+        }
+
+        lightBoxMedia.innerHTML = `${mediasWork[currentMediaIndex].html}`;
+        lightBoxName.innerHTML = `${mediasWork[currentMediaIndex].name}`;
+    })
+}
+
+function next() {
+    document.querySelector('.right-arrow-lightbox').addEventListener('click', () => {
+        currentMediaIndex += 1;
+        let lightBoxMedia = document.getElementById('works-lightbox-media');
+        let lightBoxName = document.getElementById('works-lightbox-name');
+
+        if (currentMediaIndex > mediasWork.length - 1) {
+            currentMediaIndex = 0;
+        }
+
+        lightBoxMedia.innerHTML = `${mediasWork[currentMediaIndex].html}`;
+        lightBoxName.innerHTML = `${mediasWork[currentMediaIndex].name}`;
+    })
 }
 
 function likeSubscriber() {
