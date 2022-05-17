@@ -63,6 +63,7 @@ function showWork(index) {
     close();
     previous();
     next();
+    keyboard();
 }
 
 function close() {
@@ -70,6 +71,43 @@ function close() {
         let lightbox = document.getElementById('works-lightbox');
         lightbox.style.display = 'none';
     })
+}
+
+function keyboard() {
+    document.addEventListener('keydown', (key) => {
+        let lightBoxMedia = document.getElementById('works-lightbox-media');
+        let lightBoxName = document.getElementById('works-lightbox-name');
+
+        // ESCAPE TO CLOSE
+        if (key.code == "Escape") {
+            let lightBox = document.getElementById('works-lightbox');
+            lightBox.style.display = 'none';
+        }
+
+        // ARROW RIGHT TO STEP RIGHT
+        else if (key.code == "ArrowRight") {
+            currentMediaIndex += 1;
+
+            if (currentMediaIndex > mediasWork.length - 1) {
+                currentMediaIndex = 0;
+            }
+
+            lightBoxMedia.innerHTML = `${mediasWork[currentMediaIndex].html}`;
+            lightBoxName.innerHTML = `${mediasWork[currentMediaIndex].name}`;
+        }
+
+        // ARROW LEFT TO STEP LEFT
+        else if (key.code == "ArrowLeft") {
+            currentMediaIndex -= 1;
+
+            if (currentMediaIndex < 0) {
+                currentMediaIndex = mediasWork.length - 1;
+            }
+
+            lightBoxMedia.innerHTML = `${mediasWork[currentMediaIndex].html}`;
+            lightBoxName.innerHTML = `${mediasWork[currentMediaIndex].name}`;
+        }
+    });
 }
 
 function previous() {
