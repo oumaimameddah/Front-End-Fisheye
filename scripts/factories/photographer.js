@@ -28,8 +28,8 @@ function photographerFactory(data) {
         const articlePhotographer = document.createElement( 'article');
         articlePhotographer.className = 'article-photographer';
         let templatePhotographer = `
-            <a href="./photographer.html?id=${id}" title="${name}" aria-label="Aller sur la page de ${name}">
-                <img src="${picture}" alt="${name}" class="photographer-portrait">
+            <a href="./photographer.html?id=${id}" title="${name}" aria-label="${name}">
+                <img src="${picture}" alt="" class="photographer-portrait">
                 <h2 class="name">${name}</h2>
             </a>
             <p class="location">${city}, ${country}</p>
@@ -64,8 +64,8 @@ function photographerFactory(data) {
                     <p class="photographer-city">${city}, ${country}</p>
                     <p class="photographer-tagline">${tagline}</p>
                 </div>
-                <button id="photographer-contact" title='Contact Me'>Contactez-moi</button>
-                <a href='#' title='${name}'><img src="${picture}" alt="${name}"></a>
+                <button id="photographer-contact" title='Contact Me' aria-label="Contact Me">Contactez-moi</button>
+                <a href='#' title='${name}'><img src="${picture}" aria-label="${name}" title="${name}" alt=""></a>
             </article>
             `;
 
@@ -75,7 +75,7 @@ function photographerFactory(data) {
     async function likesAndPrices(totalLike) {
         let box = document.getElementById('box');
         let boxTemplate = `
-                    <span id="total-likes">${totalLike}</span>
+                    <span id="total-likes" aria-label="likes">${totalLike}</span>
                     <i class="fas fa-heart" aria-label='likes'></i>
                     <span>${price} €/ jour</span>
                 `;

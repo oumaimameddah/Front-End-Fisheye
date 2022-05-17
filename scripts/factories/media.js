@@ -30,7 +30,7 @@ function mediaFactory(data) {
                     <span class="ph-work-price">${data.price} €</span>
                     <div class="ph-elt-like">
                         <span class="ph-work-like">
-                           <a class="like-counter" id="total-likes">${media.likes}</a>
+                           <a class="like-counter" id="total-likes" aria-label="likes">${media.likes}</a>
                         </span>
                         <i class="far fa-heart heart-btn" aria-label='likes' role="button" data-value="${media.likes}"></i>
                     </div>
@@ -51,7 +51,7 @@ function mediaFactory(data) {
                     <span class="ph-work-price">${data.price} €</span>
                     <div class="ph-elt-like">
                                 <span class="ph-work-like">
-                                    <a class="like-counter" id="total-likes">${media.likes}</a>
+                                    <a class="like-counter" id="total-likes" aria-label="likes">${media.likes}</a>
                                 </span>
                         <i class="far fa-heart heart-btn" aria-label="likes" role="button" data-value="142"></i>
                     </div>

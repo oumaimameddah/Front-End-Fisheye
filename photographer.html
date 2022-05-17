@@ -53,7 +53,7 @@
                         <span>Contactez-moi</span>
                         <span id="ph-form-name"></span>
                     </h1>
-                    <button id="close-btn" title="Close form" type="button">
+                    <button id="close-btn" title="Close form" type="button" aria-label="Close Contact form">
                         <span class="fas fa-times close-form-icon" aria-hidden="true"></span>
                     </button>
                 </header>
@@ -80,15 +80,15 @@
                               placeholder="Votre message..."></textarea>
                 </div>
                 <!-- SUBMIT -->
-                <input type="submit" value="Envoyer" class="form-submit" title="Send">
+                <input type="submit" value="Envoyer" class="form-submit" title="Send" aria-label="send">
             </form>
         </div>
 
         <aside id="works-lightbox" aria-hidden="true">
-            <article id="lightbox-body" role='dialog'>
-                <span class="fas fa-times close-lightbox-icon" role="button" title="Close dialog"></span>
-                <span class="fas fa-chevron-left left-arrow-lightbox" role="button" title="Previous image"></span>
-                <span class="fas fa-chevron-right right-arrow-lightbox" role="button" title="Next image"></span>
+            <article id="lightbox-body" aria-label="image closeup view">
+                <span class="fas fa-times close-lightbox-icon" role="button" title="Close dialog" aria-label="Close dialog"></span>
+                <span class="fas fa-chevron-left left-arrow-lightbox" role="button" title="Previous image" aria-label="Previous image"></span>
+                <span class="fas fa-chevron-right right-arrow-lightbox" role="button" title="Next image" aria-label="Next image"></span>
                 <div id="works-lightbox-media"></div>
                 <div id="works-lightbox-name"></div>
             </article>
