@@ -62,9 +62,11 @@ function photographerFactory(data) {
         let templatePhotographerProfil = `
             <article aria-label="Photographer Profil" class="photographer-profile">
                 <div class='photographer-infos'>
-                    <h2>${name}</h2>
-                    <p class="photographer-city">${city}, ${country}</p>
-                    <p class="photographer-tagline">${tagline}</p>
+                    <h2 tabindex="0">${name}</h2>
+                    <div tabindex="0">
+                        <p class="photographer-city">${city}, ${country}</p>
+                        <p class="photographer-tagline">${tagline}</p>
+                    </div>
                 </div>
                 <button id="photographer-contact" title='Contact Me' aria-label="Contact Me">Contactez-moi</button>
                 <a href='#' title='${name}'><img src="${picture}" aria-label="${name}" title="${name}" alt=""></a>

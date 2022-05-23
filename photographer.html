@@ -24,15 +24,14 @@
 
         <!-- Tri -->
         <div class="works-sort">
-            <span id="sort-text">Trier par</span>
+            <span id="sort-text" tabindex="0">Trier par</span>
             <div id="sort-wrapper">
                 <button class="sort-btn" aria-haspopup="listbox">Popularité</button>
                 <span class="fas fa-chevron-down arrow-down-open" role='button'></span>
-                <ul class="hidden-sort" role="listbox">
-                    <li class="sort" role='option'>Popularité <span class="fas fa-chevron-up arrow-up-close"></span>
-                    </li>
-                    <li class="sort" role='option'>Date</li>
-                    <li class="sort" role='option'>Tître</li>
+                <ul class="hidden-sort" tabindex="-1" role="listbox">
+                    <li class="sort" role='option' data-filter-option="popularity" tabindex="-1">Popularité <span class="fas fa-chevron-up arrow-up-close"></span></li>
+                    <li class="sort" role='option' data-filter-option="date" tabindex="-1">Date</li>
+                    <li class="sort" role='option' data-filter-option="title" tabindex="-1">Titre</li>
                 </ul>
             </div>
         </div>
@@ -41,7 +40,7 @@
         <section id='photographer-works' aria-label='photographer works'></section>
 
         <!-- Price and Likes -->
-        <div id="box" aria-label="photographer likes and price"></div>
+        <div id="box" aria-label="photographer likes and price" tabindex="0"></div>
 
         <!-- Modal -->
         <div role="dialog" id="form-dialog" aria-label="contact me form" aria-labelledby="form-title"

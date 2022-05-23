@@ -26,9 +26,9 @@ function mediaFactory(data) {
                     <img src="assets/sources/${folder}/${data.image}" alt="${data.title}" role="button" class="ph-media">
                 </a>
                 <div class="ph-work-elt-text">
-                    <h2 class="ph-work-title">${data.title}</h2>
-                    <span class="ph-work-price">${data.price} €</span>
-                    <div class="ph-elt-like">
+                    <h2 class="ph-work-title" tabindex="0">${data.title}</h2>
+                    <span class="ph-work-price" tabindex="0">${data.price} €</span>
+                    <div class="ph-elt-like" tabindex="0">
                         <span class="ph-work-like">
                            <a class="like-counter" id="total-likes" aria-label="likes">${media.likes}</a>
                         </span>
@@ -47,9 +47,9 @@ function mediaFactory(data) {
                     <video controls="controls" src="assets/sources/${folder}/${data.video}" role="button" class="ph-media"></video>
                 </a>
                 <div class="ph-work-elt-text">
-                    <h2 class="ph-work-title">${data.title}</h2>
+                    <h2 class="ph-work-title" tabindex="0">${data.title}</h2>
                     <span class="ph-work-price">${data.price} €</span>
-                    <div class="ph-elt-like">
+                    <div class="ph-elt-like" tabindex="0">
                                 <span class="ph-work-like">
                                     <a class="like-counter" id="total-likes" aria-label="likes">${media.likes}</a>
                                 </span>
