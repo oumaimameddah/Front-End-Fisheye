@@ -48,12 +48,12 @@ function mediaFactory(data) {
                 </a>
                 <div class="ph-work-elt-text">
                     <h2 class="ph-work-title" tabindex="0">${data.title}</h2>
-                    <span class="ph-work-price">${data.price} €</span>
+                    <span class="ph-work-price" tabindex="0">${data.price} €</span>
                     <div class="ph-elt-like" tabindex="0">
                                 <span class="ph-work-like">
                                     <a class="like-counter" id="total-likes" aria-label="likes">${media.likes}</a>
                                 </span>
-                        <i class="far fa-heart heart-btn" aria-label="likes" role="button" data-value="142"></i>
+                        <i class="far fa-heart heart-btn" aria-label="likes" role="button" data-value="${media.likes}"></i>
                     </div>
                 </div>
             </article>
