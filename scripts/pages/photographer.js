@@ -73,19 +73,29 @@ function close() {
     })
 }
 
+function keyboardCloseModel() {
+    // Close Contact Modal
+    document.addEventListener('keydown', (key) => {
+        if (key.code === "Escape") {
+            let modalbg = document.getElementById("form-dialog");
+            modalbg.style.display = 'none';
+        }
+    })
+}
+
 function keyboard() {
     document.addEventListener('keydown', (key) => {
         let lightBoxMedia = document.getElementById('works-lightbox-media');
         let lightBoxName = document.getElementById('works-lightbox-name');
 
         // ESCAPE TO CLOSE
-        if (key.code == "Escape") {
+        if (key.code === "Escape") {
             let lightBox = document.getElementById('works-lightbox');
             lightBox.style.display = 'none';
         }
 
         // ARROW RIGHT TO STEP RIGHT
-        else if (key.code == "ArrowRight") {
+        else if (key.code === "ArrowRight") {
             currentMediaIndex += 1;
 
             if (currentMediaIndex > mediasWork.length - 1) {
@@ -97,7 +107,7 @@ function keyboard() {
         }
 
         // ARROW LEFT TO STEP LEFT
-        else if (key.code == "ArrowLeft") {
+        else if (key.code === "ArrowLeft") {
             currentMediaIndex -= 1;
 
             if (currentMediaIndex < 0) {
@@ -238,6 +248,7 @@ async function init() {
     const { media, photographers } = await getPhotographers();
     await displayPhotographerData(media, photographers, false);
     likeSubscriber();
+    keyboardCloseModel();
 }
 
 
