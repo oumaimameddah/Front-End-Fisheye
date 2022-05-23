@@ -32,9 +32,11 @@ function photographerFactory(data) {
                 <img src="${picture}" alt="" class="photographer-portrait">
                 <h2 class="name">${name}</h2>
             </a>
-            <p class="location">${city}, ${country}</p>
-            <p class="tagline">${tagline}</p>
-            <p class="price">${price}€/jour</p>`;
+            <div tabindex="0">
+                <p class="location">${city}, ${country}</p>
+                <p class="tagline">${tagline}</p>
+                <p class="price">${price}€/jour</p>
+            </div>`;
 
         articlePhotographer.innerHTML = templatePhotographer;
 
