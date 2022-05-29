@@ -157,6 +157,7 @@ function likeSubscriber() {
      * La fonction qui ajoute ou supprime les likes dans les média
      * */
     let media = document.getElementById('photographer-works');
+    let hearts = document.getElementsByClassName("ph-elt-like");
 
     media.addEventListener('click', (e) => {
         let classListTarget = typeof e.target.classList === 'undefined' ? [] : e.target.classList.value.split(' ');
@@ -235,6 +236,36 @@ async function sortMedias(data) {
             })
         }
         displaySortMedia(mediaArraySort);
+    }));
+
+    sortBtn.forEach((btn, index) => btn.addEventListener("keypress", (e) => {
+        hiddenSort[0].style.display = "none";
+
+        if (e.key === "Enter") {
+            if (index === 0) {
+                btnSort.innerHTML = `Popularité`;
+                mediaArraySort = media.sort((a, b) => { // SORT BY POPULARITY
+                    return b.likes - a.likes
+                })
+
+            } else if (index === 1) {
+                btnSort.innerHTML = `Date`;
+                mediaArraySort = media.sort((a, b) => { // SORT BY DATE
+                    return new Date(a.date).valueOf() - new Date(b.date).valueOf();
+                })
+
+            } else if (index === 2) {
+                btnSort.innerHTML = `Titre`;
+                mediaArraySort = media.sort((a, b) => { // SORT BY TITLE
+                    if (a.title.toLowerCase() < b.title.toLowerCase()) {
+                        return -1;
+                    } else if (a.title.toLowerCase() > b.title.toLowerCase()) {
+                        return 1;
+                    }
+                })
+            }
+            displaySortMedia(mediaArraySort);
+        }
     }));
 }
 
