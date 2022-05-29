@@ -14,11 +14,13 @@ function modal() {
 function launchModal() {
     let modalbg = document.getElementById("form-dialog");
     modalbg.style.display = 'block';
+    modalbg.focus();
 }
 
 function closeModal() {
     let modalbg = document.getElementById("form-dialog");
     modalbg.style.display = 'none';
+    modalbg.blur();
 }
 
 function init() {
