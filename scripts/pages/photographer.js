@@ -184,10 +184,12 @@ async function dropDown(data) {
     let arrowOpen = document.getElementsByClassName('sort-btn');
     let arrowClose = document.getElementsByClassName('arrow-up-close');
     let hiddenSort = document.getElementsByClassName('hidden-sort');
+    let sortBtn = Array.from(document.getElementsByClassName('sort'));
 
     if (arrowOpen) {
         arrowOpen[0].addEventListener('click', () => {
             hiddenSort[0].style.display = 'block';
+            sortBtn[0].focus();
         });
         await sortMedias(data);
     }
@@ -210,21 +212,18 @@ async function sortMedias(data) {
 
         if (index === 0) {
             btnSort.innerHTML = `Popularité`;
-            console.log(`Popularité`)
             mediaArraySort = media.sort((a, b) => { // SORT BY POPULARITY
                 return b.likes - a.likes
             })
 
         } else if (index === 1) {
             btnSort.innerHTML = `Date`;
-            console.log(`Date`)
             mediaArraySort = media.sort((a, b) => { // SORT BY DATE
                 return new Date(a.date).valueOf() - new Date(b.date).valueOf();
             })
 
         } else if (index === 2) {
             btnSort.innerHTML = `Titre`;
-            console.log(`Titre`)
             mediaArraySort = media.sort((a, b) => { // SORT BY TITLE
                 if (a.title.toLowerCase() < b.title.toLowerCase()) {
                     return -1;
