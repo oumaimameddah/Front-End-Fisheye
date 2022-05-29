@@ -61,6 +61,7 @@ function showWork(index) {
     lightBoxMedia.innerHTML = `${mediasWork[index].html}`;
     lightBoxName.innerHTML = `${mediasWork[index].name}`;
     document.getElementById('works-lightbox').style.display = 'block';
+    document.querySelector('.close-lightbox-icon').focus();
     currentMediaIndex = index;
     close();
     previous();
@@ -72,7 +73,14 @@ function close() {
     document.querySelector('.close-lightbox-icon').addEventListener('click', () => {
         let lightbox = document.getElementById('works-lightbox');
         lightbox.style.display = 'none';
-    })
+    });
+
+    document.querySelector('.close-lightbox-icon').addEventListener('keypress', (e) => {
+        if (e.key === "Enter") {
+            let lightbox = document.getElementById('works-lightbox');
+            lightbox.style.display = 'none';
+        }
+    });
 }
 
 function keyboardCloseModel() {
