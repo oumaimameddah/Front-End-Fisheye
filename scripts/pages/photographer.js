@@ -56,6 +56,8 @@ async function updateMediaGallery(medias, selectedPhotographerData) {
 function showWork(index) {
     let lightBoxMedia = document.getElementById('works-lightbox-media');
     let lightBoxName = document.getElementById('works-lightbox-name');
+    let hiddenSort = document.getElementsByClassName('hidden-sort');
+    hiddenSort[0].style.display = "none";
     lightBoxMedia.innerHTML = `${mediasWork[index].html}`;
     lightBoxName.innerHTML = `${mediasWork[index].name}`;
     document.getElementById('works-lightbox').style.display = 'block';
