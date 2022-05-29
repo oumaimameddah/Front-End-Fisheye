@@ -19,7 +19,7 @@ async function displayPhotographerData(media, photographers, refresh) {
     const params = new URLSearchParams(document.location.search.substring(1));
     const idPhotographer = params.get("id");
     const selectedPhotographerData = photographers.find((photographer) => photographer.id === parseInt(idPhotographer));
-    const mediaGallery = media.filter((media) => media.photographerId = idPhotographer);
+    const mediaGallery = media.filter((el) => parseInt(el.photographerId) === parseInt(idPhotographer));
     await dropDown(media);
 
     // Afficher la section Photographer Profile
