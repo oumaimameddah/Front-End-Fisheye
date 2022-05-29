@@ -183,7 +183,6 @@ function likeSubscriber() {
     });
 
     hearts.forEach((blc, index) => blc.addEventListener("keypress", (e) => {
-        console.log(e);
         let classListTarget = typeof e.target.children[1].classList === 'undefined' ? [] : e.target.children[1].classList.value.split(' ');
         let hasClassBtn = -1 !== classListTarget.indexOf('heart-btn');
 
