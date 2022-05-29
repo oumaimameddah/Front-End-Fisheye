@@ -1,5 +1,6 @@
 function modal() {
     let modalBtn = document.getElementById("ph-contact");
+    let close = document.getElementById("close-btn");
     let closeBtn = document.getElementsByClassName('close-form-icon');
 
     if (modalBtn) {
@@ -9,6 +10,12 @@ function modal() {
     if (closeBtn) {
         closeBtn[0].addEventListener('click', this.closeModal);
     }
+
+    close.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            this.closeModal();
+        }
+    });
 }
 
 function launchModal() {
