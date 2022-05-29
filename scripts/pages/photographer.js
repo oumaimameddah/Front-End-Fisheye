@@ -157,7 +157,7 @@ function likeSubscriber() {
      * La fonction qui ajoute ou supprime les likes dans les média
      * */
     let media = document.getElementById('photographer-works');
-    let hearts = document.getElementsByClassName("ph-elt-like");
+    let hearts = Array.from(document.getElementsByClassName("ph-elt-like"));
 
     media.addEventListener('click', (e) => {
         let classListTarget = typeof e.target.classList === 'undefined' ? [] : e.target.classList.value.split(' ');
@@ -180,7 +180,31 @@ function likeSubscriber() {
                 e.target.classList.replace('far', 'fas');
             }
         }
-    })
+    });
+
+    hearts.forEach((blc, index) => blc.addEventListener("keypress", (e) => {
+        console.log(e);
+        let classListTarget = typeof e.target.children[1].classList === 'undefined' ? [] : e.target.children[1].classList.value.split(' ');
+        let hasClassBtn = -1 !== classListTarget.indexOf('heart-btn');
+
+        if (hasClassBtn) {
+            let totalLikes = parseInt(document.getElementById('total-likes').innerHTML);
+            let counterLike = e.target.children[1].parentNode.firstElementChild.firstElementChild;
+            let likeValue = parseInt(counterLike.innerHTML);
+            let isLiked = -1 !== classListTarget.indexOf('isLiked');
+
+            document.getElementById('total-likes').innerHTML = isLiked ? --totalLikes : ++totalLikes;
+            counterLike.innerHTML = isLiked ? --likeValue : ++likeValue;
+
+            if (isLiked) {
+                e.target.children[1].classList.remove('isLiked');
+                e.target.children[1].classList.replace('fas', 'far');
+            } else {
+                e.target.children[1].classList.add('isLiked');
+                e.target.children[1].classList.replace('far', 'fas');
+            }
+        }
+    }))
 }
 
 async function dropDown(data) {
