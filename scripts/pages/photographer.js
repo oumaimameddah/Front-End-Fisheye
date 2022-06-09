@@ -53,6 +53,7 @@ async function updateMediaGallery(medias, selectedPhotographerData) {
     await photographerFactory(selectedPhotographerData).likesAndPrices(likes);
 }
 
+// afficher les travaux d'un photographer
 function showWork(index) {
     let lightBoxMedia = document.getElementById('works-lightbox-media');
     let lightBoxName = document.getElementById('works-lightbox-name');
@@ -69,6 +70,7 @@ function showWork(index) {
     keyboard();
 }
 
+// fermer le travail d'un photographer
 function close() {
     document.querySelector('.close-lightbox-icon').addEventListener('click', () => {
         let lightbox = document.getElementById('works-lightbox');
@@ -83,6 +85,7 @@ function close() {
     });
 }
 
+// ecouter les evenement de clavier
 function keyboardCloseModel() {
     // Close Contact Modal
     document.addEventListener('keydown', (key) => {
@@ -93,6 +96,7 @@ function keyboardCloseModel() {
     })
 }
 
+// les autres evenement de clavier
 function keyboard() {
     document.addEventListener('keydown', (key) => {
         let lightBoxMedia = document.getElementById('works-lightbox-media');
@@ -130,6 +134,7 @@ function keyboard() {
     });
 }
 
+// permet d'afficher le travail précédent dans le lightbox
 function previous() {
     document.querySelector('.left-arrow-lightbox').addEventListener('click', () => {
         currentMediaIndex -= 1;
@@ -145,6 +150,7 @@ function previous() {
     })
 }
 
+// le travail qui suit dans le lightbox
 function next() {
     document.querySelector('.right-arrow-lightbox').addEventListener('click', () => {
         currentMediaIndex += 1;
@@ -160,6 +166,7 @@ function next() {
     })
 }
 
+// permet de calculer les likes quand on click sur le coeur
 function likeSubscriber() {
     /**
      * La fonction qui ajoute ou supprime les likes dans les média
@@ -214,6 +221,7 @@ function likeSubscriber() {
     }))
 }
 
+// affiche et applique le tri selon le choix de l'utilisateur
 async function dropDown(data) {
     let arrowOpen = document.getElementsByClassName('sort-btn');
     let arrowClose = document.getElementsByClassName('arrow-up-close');
@@ -234,6 +242,7 @@ async function dropDown(data) {
     }
 }
 
+// tri les media selon le choix de l'utilisateur
 async function sortMedias(data) {
     let mediaArraySort = [];
     let media = data;
@@ -300,6 +309,7 @@ async function sortMedias(data) {
     }));
 }
 
+// reinitialiser la page selon le tri choisit
 async function displaySortMedia(mediaArraySort) {
     const { media, photographers } = await getPhotographers();
     document.getElementById("photographer-works").innerHTML = "";
