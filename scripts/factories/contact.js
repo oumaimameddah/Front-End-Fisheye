@@ -1,3 +1,6 @@
+/*
+* LA FONCTION PRINCIPALE DE LA MODAL DE CONTACT ET QUI FAIT APPELS AUX AUTRES FONCTIONS
+*/
 function modal() {
     let modalBtn = document.getElementById("ph-contact");
     let close = document.getElementById("close-btn");
@@ -18,23 +21,27 @@ function modal() {
     });
 }
 
+// Ouvrir la modal
 function launchModal() {
     let modalbg = document.getElementById("form-dialog");
     modalbg.style.display = 'block';
     modalbg.focus();
 }
 
+// fermer la modal
 function closeModal() {
     let modalbg = document.getElementById("form-dialog");
     modalbg.style.display = 'none';
     modalbg.blur();
 }
 
+// initier la modal
 function init() {
     modal();
     fields();
 }
 
+// recuperer les info de la modal et les envoyer
 function fields() {
     // DOM ELEMENTS FORM FIELDS VALIDATION
     let form = document.getElementById('contact-form');
@@ -65,6 +72,7 @@ function fields() {
     });
 }
 
+// un affichage des information dans la console
 function consoleMessageValid(firstName, lastName, email, message) {
     console.group('Contact Message');
     console.log('Prénom : ' + firstName.value);
@@ -74,6 +82,7 @@ function consoleMessageValid(firstName, lastName, email, message) {
     console.groupEnd();
 }
 
+// checker les informations renseigné
 function errorVerification(firstName, lastName, email, message, regex) {
     this.checkNames(firstName, regex);
     this.checkNames(lastName, regex);
