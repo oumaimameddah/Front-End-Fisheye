@@ -1,4 +1,6 @@
-
+/*
+la fonction qui affiche les donners des photographers
+*/
 const displayData = async (photographers) => {
     const photographersSection = document.querySelector(".photographer_section");
 
