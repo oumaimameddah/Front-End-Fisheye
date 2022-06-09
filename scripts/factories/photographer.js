@@ -76,6 +76,7 @@ function photographerFactory(data) {
         return templatePhotographerProfil;
     }
 
+    /* La fonction qui cree le template de la zone prix et likes */
     async function likesAndPrices(totalLike) {
         let box = document.getElementById('box');
         let boxTemplate = `
