@@ -19,6 +19,7 @@ function mediaFactory(data) {
         }
     }
 
+    /* Template pour une image */
     function getImageTemplate(index) {
         let imageTemplate = `
             <article class="ph-work-elt">
@@ -39,6 +40,7 @@ function mediaFactory(data) {
         return imageTemplate;
     }
 
+    /* Template pour un video */
     function getVideoTemplate(index) {
         let videoTemplate = `
             <article class="ph-work-elt">
@@ -59,6 +61,7 @@ function mediaFactory(data) {
         return videoTemplate;
     }
     
+    /* Template pour un travail selon la resource si c'est une image ou video */
     function getWorkTemplate() {
         if (data.hasOwnProperty('image')) {
             let imageTemplate = `
